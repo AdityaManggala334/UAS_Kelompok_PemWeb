@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class LandingController extends Controller
+{
+    public function index()
+    {
+        // Jika user sudah login, arahkan langsung ke dashboard
+        if (auth()->check()) {
+            return redirect()->route('dashboard');
+        }
+        
+        return view('landing.index');
+    }
+}

@@ -59,8 +59,9 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+            // BAGIAN INI SUDAH DIPERBAIKI UNTUK SAMBUNGAN SSL TIDB CLOUD
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                Mysql::ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+                Mysql::ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA') === 'true' ? true : env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
 

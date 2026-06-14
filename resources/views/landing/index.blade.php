@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SM IRIGASI — Portal Ekosistem Manajemen Pengairan Digital</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Menyelaraskan warna hijau gelap premium khas sesuai gambar mockup */
+        body {
+            background-color: #042414;
+        }
+        .hero-bg {
+            /* Menggunakan overlay gelap agar teks hero tetap kontras dan scannable */
+            background: linear-gradient(rgba(4, 36, 20, 0.85), rgba(4, 36, 20, 0.85)), 
+                        url('https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="text-slate-100 font-sans min-h-screen antialiased">
+
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="bg-[#10b981] text-[#042414] p-1.5 rounded-lg text-sm font-bold">💧</div>
+            <span class="font-black text-xl tracking-wider text-[#10b981]">SM IRIGASI</span>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-300 tracking-wide">
+            <a href="#ekosistem" class="hover:text-white transition-colors">Fitur Utama</a>
+            <a href="#" class="hover:text-white transition-colors">Data Ekosistem</a>
+            <a href="#" class="hover:text-white transition-colors">Tentang</a>
+            <button class="text-slate-400 hover:text-white">⚙</button>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-bold">
+            <!-- PERUBAHAN: Link login menggunakan route Laravel -->
+            <a href="{{ route('login') }}" class="text-slate-300 hover:text-white px-3 py-2">Masuk</a>
+            
+            <!-- PERUBAHAN: Link daftar mengarah ke tab register di halaman login -->
+            <a href="{{ route('login') }}#panel-register" class="bg-[#10b981] hover:bg-[#059669] text-[#042414] px-4 py-2 rounded-xl transition-all duration-200">
+                Daftar Akun
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero-bg border-b border-emerald-950/40 py-24 px-6 text-center flex flex-col items-center justify-center min-h-[520px]">
+        <div class="max-w-3xl">
+            <span class="text-[10px] font-bold text-[#10b981] tracking-widest uppercase bg-emerald-950/80 border border-emerald-800/40 px-3 py-1.5 rounded-full">
+                ● PORTAL EKOSISTEM DIGITAL PERTANIAN & PENGAIRAN
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-black text-white mt-6 leading-tight tracking-tight uppercase">
+                MAKSIMALKAN <br><span class="text-[#10b981]">PANEN ANDA.</span>
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm mt-6 max-w-2xl mx-auto leading-relaxed font-medium opacity-90">
+                Ekosistem digital SM Irigasi hadir untuk mendampingi mobilitas pengelolaan lahan terpadu, penyediaan akses satu data statistik pengairan, serta membangun ruang kolaborasi inklusif demi stabilitas pangan nasional.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-xs font-bold">
+                <!-- PERUBAHAN: Tombol CTA menuju login -->
+                <a href="{{ route('login') }}" class="bg-[#10b981] hover:bg-[#059669] text-[#042414] px-6 py-3 rounded-xl transition-colors">
+                    Mulai Sekarang
+                </a>
+                
+                <!-- PERUBAHAN: Tombol dashboard menggunakan route protected -->
+                <a href="{{ route('dashboard') }}" class="bg-transparent hover:bg-white/5 border border-slate-500 text-white px-6 py-3 rounded-xl transition-colors">
+                    Masuk Dashboard
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-6 py-12 border-b border-emerald-950/30">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div class="md:border-r border-emerald-950/40 md:pr-4">
+                <span class="text-2xl sm:text-3xl font-black text-white block">4,800+</span>
+                <span class="text-[10px] font-bold text-emerald-500 tracking-wider uppercase block mt-1">Petani Terintegrasi</span>
+            </div>
+            <div class="md:border-r border-emerald-950/40 md:px-4">
+                <span class="text-2xl sm:text-3xl font-black text-white block">38.4%</span>
+                <span class="text-[10px] font-bold text-emerald-500 tracking-wider uppercase block mt-1">Efisiensi Distribusi Air</span>
+            </div>
+            <div class="md:border-r border-emerald-950/40 md:px-4">
+                <span class="text-2xl sm:text-3xl font-black text-white block">24/7</span>
+                <span class="text-[10px] font-bold text-emerald-500 tracking-wider uppercase block mt-1">Pemantauan Debit Air</span>
+            </div>
+            <div class="md:pl-4">
+                <span class="text-2xl sm:text-3xl font-black text-white block">Satu Data</span>
+                <span class="text-[10px] font-bold text-emerald-500 tracking-wider uppercase block mt-1">Sinkronisasi Real-Time</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="ekosistem" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-2xl sm:text-3xl font-black text-white leading-tight">
+                    Transparansi Layanan Publik Digital <br>Pertanian
+                </h2>
+                <p class="text-slate-300 text-xs sm:text-sm mt-4 leading-relaxed opacity-80">
+                    Kami menyajikan kemudahan pemantauan statistik pengairan bagi seluruh elemen ekosistem tani secara transparan dan berorientasi pada kesejahteraan humanis masyarakat produsen pangan Indonesia.
+                </p>
+            </div>
+            <div class="md:w-1/2 w-full">
+                <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=800&auto=format&fit=crop" 
+                     alt="Irigasi Lahan Pertanian" 
+                     class="rounded-2xl border border-emerald-900/30 w-full object-cover h-56 shadow-2xl">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+            
+            <div class="bg-[#052b18] border border-emerald-950/50 rounded-xl p-6 hover:border-[#10b981]/30 transition-all duration-300">
+                <div class="text-xl mb-4 text-[#10b981]">🗺️</div>
+                <h3 class="text-sm font-bold text-white tracking-wide">Manajemen Lahan</h3>
+                <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
+                    Pencatatan luas lahan kustomisasi wilayah regional, pemetaan petak pertanian untuk optimalisasi kalkulasi kapasitas dan kebutuhan air panen raya.
+                </p>
+            </div>
+
+            <div class="bg-[#052b18] border border-emerald-950/50 rounded-xl p-6 hover:border-[#10b981]/30 transition-all duration-300">
+                <div class="text-xl mb-4 text-[#10b981]">📊</div>
+                <h3 class="text-sm font-bold text-white tracking-wide">Sinkronisasi Data</h3>
+                <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
+                    Penyajian grafik statistik kelembapan tanah, sensor debit arus air, serta pola kebutuhan komoditas pasar secara transparan dan berkala.
+                </p>
+            </div>
+
+            <div class="bg-[#052b18] border border-emerald-950/50 rounded-xl p-6 hover:border-[#10b981]/30 transition-all duration-300">
+                <div class="text-xl mb-4 text-[#10b981]">🔊</div>
+                <h3 class="text-sm font-bold text-white tracking-wide">Konsultasi Sejawat</h3>
+                <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
+                    Ruang interaksi inklusif antar praktisi tani guna mendiskusikan penanganan kendala irigasi, pembagian jadwal air, dan kendala hama secara terpadu.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-[#031d10] border-t border-emerald-950/40 text-center py-6 text-[11px] text-slate-500">
+        © 2026 SM IRIGASI Indonesia. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
